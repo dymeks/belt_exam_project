@@ -1,0 +1,33 @@
+.container {
+	border:5px solid black;
+	width:500px;
+	margin:0px auto;
+	padding:10px;
+}
+
+.submit {
+	background-color: #76A5AF;
+	color:white;
+	margin:10px;
+}
+
+.login {
+	background-color: #76A5AF;
+}
+.login_submit {
+	margin:10px;
+}
+.comment_box {
+	min-width:450px;
+	min-height: 200px;
+	margin:auto;
+}
+
+label {
+	display: block;
+	padding:10px;
+}
+
+form {
+	border:5px solid black;
+}

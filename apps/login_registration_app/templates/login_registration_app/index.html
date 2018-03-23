@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login Home</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'login_registration_app/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+	<div class="container">
+		<div>
+			{% if messages %}
+				{% for message in messages %}
+					<p {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message}}</p>
+				{% endfor %}
+			{% endif %}		
+		</div>
+		<form class="registration" action="/main/registration" method="POST">
+			 {% csrf_token %} 
+			<label>Name: <input type="text" name="name"></label>
+			<label>Alias: <input type="text" name="alias"></label>
+			<label>Email: <input type="text" name="email"></label>
+			<label>Date of Birth <input type="date" name="birthday"></label>
+			<label>Password: <input type="password" name="password"></label>
+			<label>Password Confirm: <input type="password" name="password_confirm"></label>
+			<input class='submit' type="submit" name="submit" value="Register">
+		</form>
+		<form class="login" action="/main/login" method="POST">
+			 {% csrf_token %} 
+			<label>Email: <input type="text" name="email"></label>
+			<label>Password: <input type="password" name="password"></label>
+			<input class = 'login_submit' type="submit" name="submit" value="Login">
+		</form>
+	</div>
+</body>
+</html>

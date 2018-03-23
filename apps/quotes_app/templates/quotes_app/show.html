@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login Home</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'mystery_app/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+	<div class="container">
+		<h1>Posts by {{user_name}}</h1>
+		<h1>Count {{count}}</h1>
+		{% for quote in quotes %}
+		<p>
+			<span class="red">{{quote.name}}:</span> {{quote.content}}
+		</p>
+		{% endfor %}
+		<a href="/quotes">Dashboard</a> | <a href="/main/logout">Logout</a>
+	</div>
+</body>
+</html>
